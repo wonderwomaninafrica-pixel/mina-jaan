@@ -144,6 +144,12 @@
     padding: 0 1.4rem;
   }
 
+  .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .cover.manuscript {
     background:
       repeating-linear-gradient(180deg, #EFE9DC 0px, #EFE9DC 27px, #E4DCC9 28px),
@@ -220,23 +226,23 @@
   <div id="books">
     <section class="book-section" data-book>
       <div class="book-index">01</div>
-      <div class="cover manuscript"><span>GHOSTWRITTEN</span></div>
+      <div class="cover manuscript"><img src="cover-ghostwritten.png" alt="Ghostwritten" /></div>
       <p class="book-line">Some names disappear. Others are erased.</p>
       <a href="#ghostwritten" class="read-more">Read More &rarr;</a>
     </section>
 
     <section class="book-section" data-book>
       <div class="book-index">02</div>
-      <div class="cover varnish"><span>KEPT</span></div>
+      <div class="cover varnish"><img src="cover-kept.png" alt="Kept" /></div>
       <p class="book-line">Some things own us long before we admit it.</p>
       <a href="#kept" class="read-more">Read More &rarr;</a>
     </section>
 
     <section class="book-section" data-book>
       <div class="book-index">03</div>
-      <div class="cover ledger"><span>PAID IN FULL</span></div>
-      <p class="book-line">Every debt remembers.</p>
-      <a href="#paid-in-full" class="read-more">Read More &rarr;</a>
+      <div class="cover ledger"><img src="cover-under-the-hammer.png" alt="Under the Hammer" /></div>
+      <p class="book-line">Some treasures were never meant to be found.</p>
+      <a href="#under-the-hammer" class="read-more">Read More &rarr;</a>
     </section>
   </div>
 
