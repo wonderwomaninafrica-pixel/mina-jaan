@@ -67,8 +67,8 @@
     color: var(--gray);
     z-index: 30;
   }
-  nav.site-nav span { cursor: pointer; }
-  nav.site-nav span:hover { color: var(--paper); }
+  nav.site-nav a { color: inherit; text-decoration: none; cursor: pointer; }
+  nav.site-nav a:hover { color: var(--paper); }
 
   .spine {
     position: fixed;
@@ -185,6 +185,18 @@
     font-size: 0.9rem;
     letter-spacing: 0.3em;
   }
+  footer .legal {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    color: var(--gray);
+    letter-spacing: 0.03em;
+    max-width: 46ch;
+    margin: 1.4rem auto 0;
+    line-height: 1.6;
+  }
+  footer .legal:last-child {
+    margin-top: 0.6rem;
+  }
 
   @media (max-width: 860px) {
     .spine { display: none; }
@@ -211,9 +223,8 @@
 
   <div class="monogram">MINA JAAN</div>
   <nav class="site-nav">
-    <span>BOOKS</span>
-    <span>ABOUT</span>
-    <span>JOURNAL</span>
+    <a href="#books">BOOKS</a>
+    <a href="#about">ABOUT</a>
   </nav>
   <div class="spine">DARK ROMANCE &middot; LITERARY SUSPENSE</div>
 
@@ -247,9 +258,11 @@
     </div>
   </section>
 
-  <footer>
+  <footer id="about">
     <div class="sig">MINA JAAN</div>
     <div class="flourish">&mdash;&mdash;&mdash;&mdash;&mdash; &#10087; &mdash;&mdash;&mdash;&mdash;&mdash;</div>
+    <p class="legal">Mina Jaan is a pen name. All titles are works of fiction; any resemblance to real persons or events is coincidental.</p>
+    <p class="legal">&copy; 2026 Mina Jaan. All rights reserved.</p>
   </footer>
 
 </body>
