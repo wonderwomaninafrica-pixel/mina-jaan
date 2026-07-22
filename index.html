@@ -3,33 +3,32 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mina Jaan | Dark Romance &amp; Literary Suspense Author</title>
-<meta name="description" content="Mina Jaan writes dark romance and literary suspense. Read Ghostwritten, Kept, Under the Hammer, and Paid in Full — available now on Amazon and Kindle." />
-<meta name="keywords" content="Mina Jaan, dark romance novels, literary suspense, Ghostwritten, Kept, Under the Hammer, Paid in Full" />
+<title>Mina Jaan | Dark Romance &amp; Literary Suspense</title>
+<meta name="description" content="Mina Jaan writes stories of obsession, survival, power, and impossible choices. Read Ghostwritten, Kept, Under the Hammer, and Paid in Full." />
 <meta name="author" content="Mina Jaan" />
 <link rel="canonical" href="https://www.minajaan.com/" />
 <link rel="icon" type="image/png" href="favicon.png" />
-<meta name="theme-color" content="#0A0A0A" />
+<meta name="theme-color" content="#0D0D0D" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Mina Jaan | Dark Romance &amp; Literary Suspense Author" />
-<meta property="og:description" content="Wanting isn't the danger. Keeping is. Read Ghostwritten, Kept, Under the Hammer, and Paid in Full — available now on Amazon and Kindle." />
+<meta property="og:title" content="Mina Jaan | Dark Romance &amp; Literary Suspense" />
+<meta property="og:description" content="Stories that haunt long after the last page." />
 <meta property="og:url" content="https://www.minajaan.com/" />
 <meta property="og:image" content="https://www.minajaan.com/cover-ghostwritten.png" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Mina Jaan | Dark Romance &amp; Literary Suspense Author" />
-<meta name="twitter:description" content="Wanting isn't the danger. Keeping is." />
+<meta name="twitter:title" content="Mina Jaan | Dark Romance &amp; Literary Suspense" />
+<meta name="twitter:description" content="Stories that haunt long after the last page." />
 <meta name="twitter:image" content="https://www.minajaan.com/cover-ghostwritten.png" />
+
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap');
 
   :root {
-    --black: #0A0A0A;
-    --paper: #F1EEE7;
-    --gold: #9E2A3D;
-    --champagne: #C9B383;
-    --red: #6B1C1C;
+    --black: #0D0D0D;
+    --paper: #F3F0EB;
+    --crimson: #8A1022;
+    --gold: #C6A46A;
     --gray: #8B8B8B;
   }
 
@@ -41,277 +40,489 @@
     background: var(--black);
     color: var(--paper);
     font-family: 'Inter', sans-serif;
+    font-weight: 300;
     overflow-x: hidden;
   }
 
   .serif { font-family: 'Cormorant Garamond', serif; }
 
-  .monogram {
-    position: fixed;
-    top: 1.6rem;
-    left: 1.8rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.9rem;
-    letter-spacing: 0.28em;
-    color: var(--paper);
-    z-index: 30;
-  }
+  a { color: inherit; }
 
-  .accent { color: var(--gold); }
-  .monogram .accent { font-weight: 700; }
+  img { display: block; max-width: 100%; }
 
-  nav.site-nav {
-    position: fixed;
-    top: 1.8rem;
-    right: 1.8rem;
-    display: flex;
-    gap: 1.8rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.2em;
-    color: var(--gray);
-    z-index: 30;
-  }
-  nav.site-nav a { color: inherit; text-decoration: none; cursor: pointer; }
-  nav.site-nav a:hover { color: var(--paper); }
-
-  .spine {
-    position: fixed;
-    left: 1.3rem;
-    top: 50%;
-    transform: translateY(-50%);
-    writing-mode: vertical-rl;
-    letter-spacing: 0.35em;
-    font-size: 0.66rem;
-    color: var(--gray);
-    z-index: 25;
-    opacity: 0.85;
-  }
-
-  .stage {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(1.6rem, 4vh, 3rem);
-    padding: 5.5rem 4.5rem 3rem;
-    text-align: center;
-  }
-
-  .kicker {
+  .eyebrow {
     font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    font-size: clamp(1.1rem, 2.8vw, 1.8rem);
-    letter-spacing: 0.14em;
-    color: var(--paper);
-    line-height: 1.5;
-    max-width: 34ch;
-  }
-  .kicker-line {
-    display: block;
-    white-space: nowrap;
-  }
-
-  .manifesto {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 500;
-    font-size: clamp(0.8rem, 1.3vw, 1rem);
-    color: var(--paper);
-    white-space: nowrap;
-    line-height: 1.4;
-  }
-  .manifesto em {
-    font-style: normal;
-    color: var(--paper);
-  }
-
-  .board {
-    position: relative;
-    width: min(1150px, 94vw);
-    height: min(56vh, 500px);
-    margin: 2.2rem auto 0;
-  }
-
-  .card {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-    width: clamp(140px, 15.5vw, 210px);
-    text-decoration: none;
-    color: inherit;
-    transform: rotate(var(--r));
-    transition: transform 0.4s ease, z-index 0s;
-  }
-  .card:hover, .card:focus-visible {
-    transform: rotate(0deg) translateY(-16px) scale(1.06);
-    z-index: 40;
-  }
-
-  .card .tag {
-    align-self: center;
-    font-size: 0.6rem;
-    letter-spacing: 0.28em;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
     color: var(--gold);
   }
+  .eyebrow.crimson { color: var(--crimson); }
 
-  .card .cover-frame {
-    width: 100%;
-    aspect-ratio: 2 / 3;
-    border: 1px solid rgba(158,42,61,0.35);
-    box-shadow: 0 22px 44px rgba(0,0,0,0.55);
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- NAV ---------- */
+  nav.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.8rem 3rem;
+    background: linear-gradient(to bottom, rgba(13,13,13,0.85), transparent);
+  }
+  nav.top .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: 0.28em;
+  }
+  nav.top .links {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+  }
+  nav.top .links a { text-decoration: none; opacity: 0.85; transition: opacity 0.3s ease; }
+  nav.top .links a:hover { opacity: 1; }
+  nav.top .join-btn {
+    border: 1px solid var(--gold);
+    padding: 0.55rem 1.2rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  nav.top .join-btn:hover { background: var(--gold); color: var(--black); }
+
+  @media (max-width: 700px) {
+    nav.top { padding: 1.4rem 1.4rem; }
+    nav.top .links { display: none; }
+    nav.top .wordmark { font-size: 1.5rem; letter-spacing: 0.2em; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4.5rem;
+    gap: 1.6rem;
+  }
+  .hero-text .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(2.4rem, 4.6vw, 4.2rem);
+    line-height: 1.08;
+  }
+  .hero-text .headline em {
+    font-style: italic;
+    color: var(--crimson);
+  }
+  .hero-text .sub {
+    max-width: 36ch;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--paper);
+    opacity: 0.85;
+  }
+  .btn-outline {
+    display: inline-block;
+    align-self: flex-start;
+    border: 1px solid var(--gold);
+    padding: 0.9rem 1.8rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    color: var(--paper);
+    transition: background 0.35s ease, color 0.35s ease;
+  }
+  .btn-outline:hover { background: var(--gold); color: var(--black); }
+  .btn-outline.crimson { border-color: var(--crimson); }
+  .btn-outline.crimson:hover { background: var(--crimson); color: var(--paper); }
+  .btn-fill {
+    display: inline-block;
+    background: var(--crimson);
+    padding: 0.9rem 1.8rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    color: var(--paper);
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  .btn-fill:hover { opacity: 0.85; }
+
+  .hero-media {
+    position: relative;
     overflow: hidden;
-    transition: box-shadow 0.4s ease;
+    min-height: 60vh;
   }
-  .card:hover .cover-frame, .card:focus-visible .cover-frame {
-    box-shadow: 0 32px 60px rgba(0,0,0,0.7);
-  }
-  .card img {
+  .hero-media img, .hero-media .media-slot {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    position: absolute;
+    inset: 0;
+    transition: transform 6s ease;
   }
+  .hero:hover .hero-media img { transform: scale(1.03); }
 
-  .card .quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: clamp(0.72rem, 1vw, 0.88rem);
-    opacity: 0.8;
-    max-width: 22ch;
-    margin: 0 auto;
-  }
-
-  /* staggered fan placement, desktop */
-  .card:nth-child(1) { --r: -6deg; left: 0%;   top: 12%; }
-  .card:nth-child(2) { --r: 4deg;  left: 26%;  top: 0%;  }
-  .card:nth-child(3) { --r: -3deg; left: 52%;  top: 10%; }
-  .card:nth-child(4) { --r: 5deg;  left: 78%;  top: 2%;  }
-
-  footer {
-    padding: 5rem 1.5rem 3.5rem;
-    text-align: center;
-    font-family: 'Cormorant Garamond', serif;
-  }
-  footer .sig {
-    font-size: 1.1rem;
-    letter-spacing: 0.2em;
-  }
-  footer .flourish {
-    margin-top: 0.9rem;
+  .media-slot {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-  }
-  footer .flourish-line {
-    width: 70px;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.55;
-  }
-  footer .flourish-mark {
-    color: var(--gold);
-    font-size: 1.1rem;
-    line-height: 1;
-  }
-  footer .bio {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: clamp(0.95rem, 1.6vw, 1.15rem);
-    color: var(--paper);
-    max-width: 40ch;
-    margin: 1.8rem auto 0;
-    line-height: 1.55;
-  }
-  footer .legal {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.72rem;
+    background: linear-gradient(160deg, #1a1a1a, #0d0d0d);
     color: var(--gray);
-    letter-spacing: 0.03em;
-    max-width: 46ch;
-    margin: 1.4rem auto 0;
-    line-height: 1.6;
-  }
-  footer .legal:last-child {
-    margin-top: 0.6rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-align: center;
+    padding: 2rem;
+    border: 1px dashed rgba(198,164,106,0.25);
   }
 
-  @media (max-width: 860px) {
-    .spine { display: none; }
-    .stage { padding: 5rem 1.2rem 2.5rem; gap: 1.4rem; }
-    .board {
-      height: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.2rem 1.4rem;
-      position: static;
-    }
-    .card {
-      position: static;
-      width: 100%;
-      transform: rotate(var(--r));
-    }
-    .card:nth-child(2n) { --r: 2deg; }
-    .card:nth-child(2n+1) { --r: -2deg; }
-    .card:hover, .card:focus-visible { transform: rotate(0deg) translateY(-8px) scale(1.03); }
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-text { padding: 7rem 1.6rem 3rem; order: 1; }
+    .hero-media { order: 2; min-height: 60vh; }
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section { padding: 7rem 3rem; }
+  .section-heading {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    letter-spacing: 0.1em;
+    margin-bottom: 3.5rem;
+  }
+  .rule {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+    margin: 1rem auto 0;
+  }
+
+  @media (max-width: 700px) {
+    section { padding: 4.5rem 1.4rem; }
+  }
+
+  /* ---------- COLLECTION ---------- */
+  .collection-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem 2.2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .book {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    text-align: center;
+  }
+  .book .cover-frame {
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+  }
+  .book .cover-frame img { width: 100%; height: 100%; object-fit: cover; }
+  .book:hover .cover-frame { transform: translateY(-8px); }
+  .book .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+  }
+  .book .teaser {
+    font-size: 0.82rem;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+  .book .view-link {
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    align-self: center;
+  }
+
+  @media (max-width: 900px) {
+    .collection-grid { grid-template-columns: repeat(2, 1fr); gap: 2.6rem 1.4rem; }
+  }
+
+  /* ---------- FEATURED RELEASE ---------- */
+  .featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .featured-text { display: flex; flex-direction: column; gap: 1.2rem; align-items: flex-start; }
+  .featured-text .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+  }
+  .featured-text .tagline {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--paper);
+    opacity: 0.85;
+  }
+  .featured-media { aspect-ratio: 4 / 3; overflow: hidden; }
+  .featured-media img, .featured-media .media-slot { width: 100%; height: 100%; object-fit: cover; }
+
+  @media (max-width: 900px) {
+    .featured { grid-template-columns: 1fr; }
+    .featured-media { order: -1; }
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .about-text { display: flex; flex-direction: column; gap: 1.2rem; }
+  .about-text .note {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    line-height: 1.7;
+  }
+  .about-media { aspect-ratio: 3 / 4; overflow: hidden; filter: grayscale(1); }
+  .about-media img, .about-media .media-slot { width: 100%; height: 100%; object-fit: cover; }
+
+  @media (max-width: 640px) {
+    .about { grid-template-columns: 1fr; }
+    .about-media { order: -1; max-width: 260px; margin: 0 auto; }
+  }
+
+  /* ---------- NEWSLETTER ---------- */
+  .newsletter {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .newsletter .heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+  }
+  .newsletter .desc {
+    font-size: 0.88rem;
+    color: var(--gray);
+    line-height: 1.6;
+    max-width: 44ch;
+  }
+  .newsletter form {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+    width: 100%;
+  }
+  .newsletter input[type="email"] {
+    flex: 1;
+    background: transparent;
+    border: 1px solid rgba(243,240,235,0.25);
+    color: var(--paper);
+    padding: 0.9rem 1.1rem;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+  }
+  .newsletter input[type="email"]::placeholder { color: var(--gray); letter-spacing: 0.05em; }
+  .newsletter .status {
+    font-size: 0.78rem;
+    color: var(--gold);
+    min-height: 1.2em;
+  }
+
+  @media (max-width: 560px) {
+    .newsletter form { flex-direction: column; }
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 4rem 1.5rem 2.5rem;
+    text-align: center;
+    border-top: 1px solid rgba(243,240,235,0.08);
+  }
+  footer .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.28em;
+  }
+  footer .tagline {
+    margin-top: 0.5rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+  }
+  footer .footer-links {
+    margin-top: 1.4rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+  }
+  footer .footer-links a { text-decoration: none; opacity: 0.8; }
+  footer .copyright {
+    margin-top: 2rem;
+    font-size: 0.7rem;
+    color: var(--gray);
   }
 </style>
 </head>
 <body>
 
-  <div class="monogram">MINA <span class="accent">J</span>AAN</div>
-  <nav class="site-nav">
-    <a href="#books">BOOKS</a>
-    <a href="#about">ABOUT</a>
+  <nav class="top">
+    <div class="wordmark">MINA <span style="color:var(--crimson); font-weight:700;">J</span>AAN</div>
+    <div class="links">
+      <a href="#collection">BOOKS</a>
+      <a href="#about">ABOUT</a>
+      <a href="#newsletter" class="join-btn">JOIN THE LIST</a>
+    </div>
   </nav>
-  <div class="spine">DARK ROMANCE &middot; LITERARY SUSPENSE</div>
 
-  <section class="stage" id="books">
-    <p class="manifesto">Some things you choose. <em>Some things choose you.</em></p>
-    <p class="kicker">
-      <span class="kicker-line">DARK <span class="accent">ROMANCE</span> &middot; INTENSE <span class="accent">PASSION</span></span>
-      <span class="kicker-line">FORBIDDEN <span class="accent">OBSESSION</span></span>
-    </p>
-
-    <div class="board">
-      <a class="card" href="https://www.amazon.com/dp/B0H98NC58L" target="_blank" rel="noopener">
-        <span class="tag">EXHIBIT 01</span>
-        <div class="cover-frame"><img src="cover-ghostwritten.png" alt="Ghostwritten" /></div>
-        <span class="quote">Some names disappear. Others are erased.</span>
-      </a>
-
-      <a class="card" href="https://www.amazon.com/dp/B0H8T723XL" target="_blank" rel="noopener">
-        <span class="tag">EXHIBIT 02</span>
-        <div class="cover-frame"><img src="cover-kept.png" alt="Kept" /></div>
-        <span class="quote">Some things own us long before we admit it.</span>
-      </a>
-
-      <a class="card" href="https://www.amazon.com/dp/B0H9B17TQB" target="_blank" rel="noopener">
-        <span class="tag">EXHIBIT 03</span>
-        <div class="cover-frame"><img src="cover-under-the-hammer.png" alt="Under the Hammer" /></div>
-        <span class="quote">Some treasures were never meant to be found.</span>
-      </a>
-
-      <a class="card" href="https://www.amazon.com/dp/B0H8W7M5H9" target="_blank" rel="noopener">
-        <span class="tag">EXHIBIT 04</span>
-        <div class="cover-frame"><img src="cover-paid-in-full.png" alt="Paid in Full" /></div>
-        <span class="quote">Every debt remembers.</span>
-      </a>
+  <section class="hero">
+    <div class="hero-text reveal">
+      <p class="eyebrow">Dark Romance &amp; Literary Suspense</p>
+      <h1 class="headline">Stories that<br><em>HAUNT</em><br>long after<br>the last page.</h1>
+      <p class="sub">Mina Jaan writes stories of obsession, survival, power, and impossible choices.</p>
+      <a href="#collection" class="btn-outline">EXPLORE THE COLLECTION</a>
+    </div>
+    <div class="hero-media">
+      <img src="hero-image.png" alt="Mina Jaan — Dark Romance" />
     </div>
   </section>
 
-  <footer id="about">
-    <div class="sig">MINA <span class="accent">J</span>AAN</div>
-    <div class="flourish">
-      <span class="flourish-line"></span>
-      <span class="flourish-mark">&#10087;</span>
-      <span class="flourish-line"></span>
+  <section id="collection">
+    <h2 class="section-heading">THE COLLECTION<div class="rule"></div></h2>
+    <div class="collection-grid">
+
+      <div class="book reveal">
+        <div class="cover-frame"><img src="cover-ghostwritten.png" alt="Ghostwritten" /></div>
+        <div class="title">Ghostwritten</div>
+        <div class="teaser">Some names disappear. Others are erased.</div>
+        <a class="view-link" href="https://www.amazon.com/dp/B0H98NC58L" target="_blank" rel="noopener">VIEW BOOK</a>
+      </div>
+
+      <div class="book reveal">
+        <div class="cover-frame"><img src="cover-kept.png" alt="Kept" /></div>
+        <div class="title">Kept</div>
+        <div class="teaser">Some things own us long before we admit it.</div>
+        <a class="view-link" href="https://www.amazon.com/dp/B0H8T723XL" target="_blank" rel="noopener">VIEW BOOK</a>
+      </div>
+
+      <div class="book reveal">
+        <div class="cover-frame"><img src="cover-under-the-hammer.png" alt="Under the Hammer" /></div>
+        <div class="title">Under the Hammer</div>
+        <div class="teaser">Some treasures were never meant to be found.</div>
+        <a class="view-link" href="https://www.amazon.com/dp/B0H9B17TQB" target="_blank" rel="noopener">VIEW BOOK</a>
+      </div>
+
+      <div class="book reveal">
+        <div class="cover-frame"><img src="cover-paid-in-full.png" alt="Paid in Full" /></div>
+        <div class="title">Paid in Full</div>
+        <div class="teaser">Every debt remembers.</div>
+        <a class="view-link" href="https://www.amazon.com/dp/B0H8W7M5H9" target="_blank" rel="noopener">VIEW BOOK</a>
+      </div>
+
     </div>
-    <p class="bio">Mina Jaan writes dark romance and literary suspense &mdash; stories built on power, obsession, and the choices that cost the most.</p>
-    <p class="legal">&copy; 2026 Mina Jaan. All rights reserved.</p>
+  </section>
+
+  <section>
+    <div class="featured reveal">
+      <div class="featured-text">
+        <p class="eyebrow crimson">Latest Release</p>
+        <div class="title">Paid in Full</div>
+        <p class="tagline">Power comes at a price.<br>Love was never part of the deal.</p>
+        <a href="https://www.amazon.com/dp/B0H8W7M5H9" target="_blank" rel="noopener" class="btn-outline crimson">READ ON KINDLE</a>
+      </div>
+      <div class="featured-media">
+        <img src="featured-image.png" alt="Paid in Full" />
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about reveal">
+      <div class="about-text">
+        <p class="eyebrow crimson">A Note From Mina</p>
+        <p class="note">I write about people who mistake survival for love.<br>Power for intimacy.<br>Silence for peace.<br><br>Sometimes they're right.<br>Usually they're wrong.</p>
+      </div>
+      <div class="about-media">
+        <img src="about-portrait.png" alt="Mina Jaan at her desk" />
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter">
+    <div class="newsletter reveal">
+      <p class="heading">Be the First to Know</p>
+      <p class="desc">Sign up to receive updates about upcoming books, release dates, cover reveals, and exclusive excerpts.</p>
+      <form onsubmit="handleSignup(event)">
+        <input type="email" id="signup-email" placeholder="EMAIL ADDRESS" required />
+        <button type="submit" class="btn-fill">JOIN THE LIST</button>
+      </form>
+      <p class="status" id="signup-status"></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wordmark">MINA <span style="color:var(--crimson); font-weight:700;">J</span>AAN</div>
+    <div class="tagline">DARK ROMANCE &amp; LITERARY SUSPENSE</div>
+    <div class="footer-links">
+      <a href="#newsletter">JOIN THE LIST</a>
+    </div>
+    <div class="copyright">&copy; 2026 Mina Jaan</div>
   </footer>
+
+  <script>
+    // scroll-triggered fade-in
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('in');
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+
+    // newsletter form (no email service connected yet)
+    function handleSignup(e) {
+      e.preventDefault();
+      const status = document.getElementById('signup-status');
+      status.textContent = "This form isn't connected to a mailing list yet.";
+    }
+  </script>
 
 </body>
 </html>
