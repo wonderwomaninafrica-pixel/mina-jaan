@@ -110,9 +110,13 @@
   nav.top .join-btn:hover { background: var(--gold); color: var(--black); }
 
   @media (max-width: 700px) {
-    nav.top { padding: 1.4rem 1.4rem; }
-    nav.top .links { display: none; }
-    nav.top .wordmark { font-size: 1.5rem; letter-spacing: 0.2em; }
+    nav.top { padding: 1.2rem 1.2rem; }
+    nav.top .wordmark { font-size: 1.3rem; letter-spacing: 0.16em; }
+    nav.top .links { gap: 0.9rem; font-size: 0.6rem; }
+    nav.top .join-btn { padding: 0.4rem 0.7rem; font-size: 0.58rem; }
+  }
+  @media (max-width: 380px) {
+    nav.top .links a:not(.join-btn) { display: none; }
   }
 
   /* ---------- HERO ---------- */
@@ -430,6 +434,14 @@
     font-size: 0.78rem;
     color: var(--gold);
     min-height: 1.2em;
+  }
+
+  @media (max-width: 700px) {
+    .newsletter input[type="text"],
+    .newsletter input[type="email"],
+    .newsletter textarea {
+      font-size: 16px;
+    }
   }
 
   /* ---------- FOOTER ---------- */
