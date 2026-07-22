@@ -346,28 +346,41 @@
   }
   .newsletter form {
     display: flex;
-    gap: 0.8rem;
+    flex-direction: column;
+    gap: 0.9rem;
     margin-top: 1.2rem;
     width: 100%;
   }
-  .newsletter input[type="email"] {
-    flex: 1;
+  .newsletter input[type="text"],
+  .newsletter input[type="email"],
+  .newsletter textarea {
     background: transparent;
     border: 1px solid rgba(243,240,235,0.25);
     color: var(--paper);
     padding: 0.9rem 1.1rem;
     font-size: 0.85rem;
     font-family: 'Inter', sans-serif;
+    width: 100%;
+    resize: vertical;
   }
-  .newsletter input[type="email"]::placeholder { color: var(--gray); letter-spacing: 0.05em; }
+  .newsletter input::placeholder,
+  .newsletter textarea::placeholder { color: var(--gray); letter-spacing: 0.05em; }
+  .newsletter .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-align: left;
+    font-size: 0.8rem;
+    color: var(--gray);
+  }
+  .newsletter .checkbox-row input[type="checkbox"] {
+    width: auto;
+    accent-color: var(--crimson);
+  }
   .newsletter .status {
     font-size: 0.78rem;
     color: var(--gold);
     min-height: 1.2em;
-  }
-
-  @media (max-width: 560px) {
-    .newsletter form { flex-direction: column; }
   }
 
   /* ---------- FOOTER ---------- */
@@ -410,7 +423,7 @@
     <div class="links">
       <a href="#collection">BOOKS</a>
       <a href="#about">ABOUT</a>
-      <a href="#newsletter" class="join-btn">JOIN THE LIST</a>
+      <a href="#newsletter" class="join-btn">CONTACT</a>
     </div>
   </nav>
 
@@ -489,13 +502,19 @@
 
   <section id="newsletter">
     <div class="newsletter reveal">
-      <p class="heading">Be the First to Know</p>
-      <p class="desc">Sign up to receive updates about upcoming books, release dates, cover reveals, and exclusive excerpts.</p>
-      <form onsubmit="handleSignup(event)">
-        <input type="email" id="signup-email" placeholder="EMAIL ADDRESS" required />
-        <button type="submit" class="btn-fill">JOIN THE LIST</button>
+      <p class="heading">Get in Touch</p>
+      <p class="desc">Questions, thoughts on a book, or anything else &mdash; send a message below.</p>
+      <form id="contact-form" onsubmit="handleContactSubmit(event)">
+        <input type="text" id="contact-name" placeholder="NAME" />
+        <input type="email" id="contact-email" placeholder="EMAIL ADDRESS" required />
+        <textarea id="contact-message" placeholder="MESSAGE" required rows="4"></textarea>
+        <label class="checkbox-row">
+          <input type="checkbox" id="contact-subscribe" />
+          <span>Sign me up for new releases. I will not spam you.</span>
+        </label>
+        <button type="submit" class="btn-fill">SEND</button>
       </form>
-      <p class="status" id="signup-status"></p>
+      <p class="status" id="contact-status"></p>
     </div>
   </section>
 
@@ -503,7 +522,7 @@
     <a href="/" class="wordmark" style="text-decoration:none;">MINA <span style="color:var(--crimson); font-weight:700;">J</span>AAN</a>
     <div class="tagline">DARK ROMANCE &amp; LITERARY SUSPENSE</div>
     <div class="footer-links">
-      <a href="#newsletter">JOIN THE LIST</a>
+      <a href="#newsletter">CONTACT</a>
     </div>
     <div class="copyright">&copy; 2026 Mina Jaan</div>
   </footer>
@@ -518,11 +537,38 @@
     }, { threshold: 0.15 });
     revealEls.forEach(el => io.observe(el));
 
-    // newsletter form (no email service connected yet)
-    function handleSignup(e) {
+    // contact form -> serverless backend (Resend)
+    async function handleContactSubmit(e) {
       e.preventDefault();
-      const status = document.getElementById('signup-status');
-      status.textContent = "This form isn't connected to a mailing list yet.";
+      const status = document.getElementById('contact-status');
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const message = document.getElementById('contact-message').value;
+      const subscribe = document.getElementById('contact-subscribe').checked;
+
+      submitBtn.disabled = true;
+      status.textContent = "Sending...";
+
+      try {
+        const res = await fetch('https://mina-jaan-contact-api.vercel.app/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message, subscribe }),
+        });
+
+        if (res.ok) {
+          status.textContent = "Thank you \u2014 your message has been sent.";
+          e.target.reset();
+        } else {
+          status.textContent = "Something went wrong. Please try again shortly.";
+        }
+      } catch (err) {
+        status.textContent = "Something went wrong. Please try again shortly.";
+      } finally {
+        submitBtn.disabled = false;
+      }
     }
   </script>
 
