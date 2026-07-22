@@ -117,16 +117,45 @@
 
   /* ---------- HERO ---------- */
   .hero {
+    position: relative;
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-media img, .hero-media .media-slot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    animation: kenburns 16s ease-out forwards;
+  }
+
+  @keyframes kenburns {
+    from { transform: scale(1.12); }
+    to { transform: scale(1); }
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(13,13,13,0.97) 0%, rgba(13,13,13,0.85) 32%, rgba(13,13,13,0.3) 60%, rgba(13,13,13,0.05) 100%),
+                linear-gradient(0deg, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0) 40%);
   }
   .hero-text {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 8rem 4.5rem;
+    padding: 0 4.5rem;
     gap: 1.6rem;
+    max-width: 640px;
   }
   .hero-text .headline {
     font-family: 'Cormorant Garamond', serif;
@@ -173,21 +202,6 @@
   }
   .btn-fill:hover { opacity: 0.85; }
 
-  .hero-media {
-    position: relative;
-    overflow: hidden;
-    min-height: 60vh;
-  }
-  .hero-media img, .hero-media .media-slot {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    inset: 0;
-    transition: transform 6s ease;
-  }
-  .hero:hover .hero-media img { transform: scale(1.03); }
-
   .media-slot {
     display: flex;
     align-items: center;
@@ -201,10 +215,45 @@
     border: 1px dashed rgba(198,164,106,0.25);
   }
 
+  .hero-in {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: heroFadeUp 1s ease forwards;
+  }
+  @keyframes heroFadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 2.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 1px;
+    height: 40px;
+  }
+  .scroll-cue span {
+    display: block;
+    width: 1px;
+    height: 100%;
+    background: var(--gold);
+    opacity: 0.6;
+    animation: scrollCue 2s ease-in-out infinite;
+    transform-origin: top;
+  }
+  @keyframes scrollCue {
+    0% { transform: scaleY(0); opacity: 0; }
+    40% { transform: scaleY(1); opacity: 0.6; }
+    100% { transform: scaleY(0); opacity: 0; }
+  }
+
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-text { padding: 7rem 1.6rem 3rem; order: 1; }
-    .hero-media { order: 2; min-height: 60vh; }
+    .hero-text { padding: 0 1.6rem; max-width: 100%; }
+    .hero-overlay {
+      background: linear-gradient(180deg, rgba(13,13,13,0.75) 0%, rgba(13,13,13,0.55) 40%, rgba(13,13,13,0.92) 100%);
+    }
+    .scroll-cue { display: none; }
   }
 
   /* ---------- SECTION SHELL ---------- */
@@ -428,14 +477,18 @@
   </nav>
 
   <section class="hero">
-    <div class="hero-text reveal">
-      <p class="eyebrow">Dark Romance &amp; Literary Suspense</p>
-      <h1 class="headline">Stories that<br><em>HAUNT</em><br>long after<br>the last page.</h1>
-      <p class="sub">Mina Jaan writes stories of obsession, survival, power, and impossible choices.</p>
-      <a href="#collection" class="btn-outline">EXPLORE THE COLLECTION</a>
-    </div>
     <div class="hero-media">
       <img src="hero-image.png" alt="Mina Jaan — Dark Romance" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <p class="eyebrow hero-in" style="animation-delay: 0.3s;">Dark Romance &amp; Literary Suspense</p>
+      <h1 class="headline hero-in" style="animation-delay: 0.6s;">Stories that<br><em>HAUNT</em><br>long after<br>the last page.</h1>
+      <p class="sub hero-in" style="animation-delay: 0.9s;">Mina Jaan writes stories of obsession, survival, power, and impossible choices.</p>
+      <a href="#collection" class="btn-outline hero-in" style="animation-delay: 1.2s;">EXPLORE THE COLLECTION</a>
+    </div>
+    <div class="scroll-cue hero-in" style="animation-delay: 1.6s;">
+      <span></span>
     </div>
   </section>
 
