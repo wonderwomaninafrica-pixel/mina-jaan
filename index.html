@@ -446,9 +446,11 @@
 
   /* ---------- FOOTER ---------- */
   footer {
-    padding: 4rem 1.5rem 2.5rem;
+    padding: 1.1rem 1.5rem;
     text-align: center;
-    border-top: 1px solid rgba(243,240,235,0.08);
+    border-top: 1px solid rgba(243,240,235,0.12);
+    background: rgba(13,13,13,0.96);
+    backdrop-filter: blur(6px);
   }
   footer .wordmark {
     font-family: 'Cormorant Garamond', serif;
@@ -474,6 +476,25 @@
     margin-top: 2rem;
     font-size: 0.7rem;
     color: var(--gray);
+  }
+
+  @media (min-width: 901px) {
+    footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.8rem 2rem;
+    }
+    footer .tagline { display: none; }
+    footer .footer-links { margin-top: 0; }
+    footer .copyright { margin-top: 0; }
+    body { padding-bottom: 56px; }
   }
 </style>
 </head>
