@@ -27,7 +27,8 @@
   :root {
     --black: #0A0A0A;
     --paper: #F1EEE7;
-    --gold: #C5A26A;
+    --gold: #9E2A3D;
+    --champagne: #C9B383;
     --red: #6B1C1C;
     --gray: #8B8B8B;
   }
@@ -50,11 +51,14 @@
     top: 1.6rem;
     left: 1.8rem;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 0.95rem;
+    font-size: 1.9rem;
     letter-spacing: 0.28em;
     color: var(--paper);
     z-index: 30;
   }
+
+  .accent { color: var(--gold); }
+  .monogram .accent { font-weight: 700; }
 
   nav.site-nav {
     position: fixed;
@@ -94,17 +98,32 @@
     text-align: center;
   }
 
+  .kicker {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.1rem, 2.8vw, 1.8rem);
+    letter-spacing: 0.14em;
+    color: var(--paper);
+    line-height: 1.5;
+    max-width: 34ch;
+  }
+  .kicker-line {
+    display: block;
+    white-space: nowrap;
+  }
+
   .manifesto {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 500;
-    font-size: clamp(1.35rem, 3.2vw, 2.3rem);
-    max-width: 30ch;
-    line-height: 1.35;
+    font-size: clamp(0.8rem, 1.3vw, 1rem);
+    color: var(--paper);
+    white-space: nowrap;
+    line-height: 1.4;
   }
   .manifesto em {
     font-style: normal;
-    color: var(--gold);
+    color: var(--paper);
   }
 
   .board {
@@ -140,7 +159,7 @@
   .card .cover-frame {
     width: 100%;
     aspect-ratio: 2 / 3;
-    border: 1px solid rgba(197,162,106,0.3);
+    border: 1px solid rgba(158,42,61,0.35);
     box-shadow: 0 22px 44px rgba(0,0,0,0.55);
     overflow: hidden;
     transition: box-shadow 0.4s ease;
@@ -180,10 +199,22 @@
     letter-spacing: 0.2em;
   }
   footer .flourish {
-    margin-top: 0.6rem;
+    margin-top: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  footer .flourish-line {
+    width: 70px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.55;
+  }
+  footer .flourish-mark {
     color: var(--gold);
-    font-size: 0.9rem;
-    letter-spacing: 0.3em;
+    font-size: 1.1rem;
+    line-height: 1;
   }
   footer .bio {
     font-family: 'Cormorant Garamond', serif;
@@ -230,7 +261,7 @@
 </head>
 <body>
 
-  <div class="monogram">MINA JAAN</div>
+  <div class="monogram">MINA <span class="accent">J</span>AAN</div>
   <nav class="site-nav">
     <a href="#books">BOOKS</a>
     <a href="#about">ABOUT</a>
@@ -238,7 +269,11 @@
   <div class="spine">DARK ROMANCE &middot; LITERARY SUSPENSE</div>
 
   <section class="stage" id="books">
-    <p class="manifesto">Wanting isn't the danger. <em>Keeping</em> is.</p>
+    <p class="manifesto">Some things you choose. <em>Some things choose you.</em></p>
+    <p class="kicker">
+      <span class="kicker-line">DARK <span class="accent">ROMANCE</span> &middot; INTENSE <span class="accent">PASSION</span></span>
+      <span class="kicker-line">FORBIDDEN <span class="accent">OBSESSION</span></span>
+    </p>
 
     <div class="board">
       <a class="card" href="https://www.amazon.com/dp/B0H98NC58L" target="_blank" rel="noopener">
@@ -268,8 +303,12 @@
   </section>
 
   <footer id="about">
-    <div class="sig">MINA JAAN</div>
-    <div class="flourish">&mdash;&mdash;&mdash;&mdash;&mdash; &#10087; &mdash;&mdash;&mdash;&mdash;&mdash;</div>
+    <div class="sig">MINA <span class="accent">J</span>AAN</div>
+    <div class="flourish">
+      <span class="flourish-line"></span>
+      <span class="flourish-mark">&#10087;</span>
+      <span class="flourish-line"></span>
+    </div>
     <p class="bio">Mina Jaan writes dark romance and literary suspense &mdash; stories built on power, obsession, and the choices that cost the most.</p>
     <p class="legal">&copy; 2026 Mina Jaan. All rights reserved.</p>
   </footer>
